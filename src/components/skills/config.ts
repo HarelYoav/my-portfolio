@@ -7,11 +7,11 @@ import NPM from "./../../images/npm-logo.png";
 import Git from "./../../images/git-logo.png";
 import Socket from "./../../images/socket.svg";
 import NodeJS from "./../../images/nodej-js.png";
-import Jenkins from '../../images/jenkins.png';
-import Linux from '../../images/linux.png';
-import Java from '../../images/java.jpg';
-import MongoDB from '../../images/mongodb.png';
-import Csharp from '../../images/c#.png';
+import Jenkins from './../../images/jenkins.png';
+import Linux from './../../images/linux.png';
+import Java from './../../images/java.jpg';
+import MongoDB from './../../images/mongodb.png';
+import Csharp from './../../images/c#.png';
 
 export type Skill = {
   name: string;
