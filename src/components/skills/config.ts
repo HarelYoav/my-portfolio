@@ -11,6 +11,7 @@ import Jenkins from '../../images/jenkins.png';
 import Linux from '../../images/linux.png';
 import Java from '../../images/java.jpg';
 import MongoDB from '../../images/mongodb.png';
+import Csharp from '../../images/c#.png'
 
 export type Skill = {
   name: string;
@@ -95,5 +96,10 @@ export const skills: Skill[] = [
     name: "MongoDB",
     url: "https://git-scm.com/",
     img: MongoDB
+  },
+  {
+    name: "C#",
+    url: "https://git-scm.com/",
+    img: Csharp
   },
 ]
