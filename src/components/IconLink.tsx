@@ -1,6 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-
 
 interface IProps {
     link: string;
@@ -10,9 +8,9 @@ interface IProps {
 
 function IconLink({ link, title, icon }: IProps) {
    return (
-      <Link to={link} target={"_blank"} rel="noopener noreferrer">
+      <a href={link} target={"_blank"} rel="noopener noreferrer">
          <i className={icon}/> {title}
-      </Link>
+      </a>
    );
 }
 
