@@ -11,8 +11,14 @@ const Portfolio = () => {
       <Container maxWidth='xl'>
         <Grid container display={'flex'} justifyContent={'center'}>
           {info.portfolio.map((project, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <PortfolioCard image={project.image} live={project.live} source={project.source} title={project.title} />
+            <Grid item xs={12} md={6} key={index}>
+              <PortfolioCard 
+                image={project.image} 
+                live={project.live} 
+                source={project.source} 
+                title={project.title} 
+                tech={project.tech} 
+              />
             </Grid>
           ))}
         </Grid>

@@ -1,8 +1,8 @@
 import self from "./../images/self.png"
-import mock1 from "./../images/mock1.png"
-// import mock2 from "../img/mock2.png"
-// import mock3 from "../img/mock3.png"
-// import mock4 from "../img/mock4.png"
+import mock1 from "./../images/battleShip.png"
+import mock2 from "../images/rupBnb.png"
+import mock3 from "../images/myPortfolio.png"
+import mock4 from "../images/mxDash.png"
 // import mock5 from "../img/mock5.png"
 
 /* Hi there! Thanks for checking out my portfolio template. Be sure to read the comments to get a better understanding of
@@ -95,31 +95,30 @@ export const info = {
             title: "Battle Ship - Online",
             live: "http://ec2-54-157-85-245.compute-1.amazonaws.com/battle-ship", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.
             source: "https://github.com/paytonjewell", // this should be a link to the **repository** of the project, where the code is hosted.
-            image: mock1
+            image: mock1,
+            tech: 'TypeScript, NodeJS, Express, React, Socket.IO, Jenkins CD/CI, AWS'
         },
         {
             title: "RupBnb",
-            live: "https://paytonpierce.dev",
+            live: "http://194.90.158.74/cgroup4/test2/tar5/Pages/index.html",
             source: "https://github.com/paytonjewell",
-            image: mock1
+            image: mock2,
+            tech: 'C# .net, JavaScrupt, JQuery, SQL, mssql'
         },
         {
             title: "My Portfolio",
             live: "https://paytonpierce.dev",
             source: "https://github.com/paytonjewell",
-            image: mock1
+            image: mock3,
+            tech: 'TypeScript, React, Mui Material, Jenkins CD/CI, AWS'
         },
         {
             title: "Notes and Weather",
-            live: "https://paytonpierce.dev",
+            live: "http://mx-dash.herokuapp.com/",
             source: "https://github.com/paytonjewell",
-            image: mock1
+            image: mock4,
+            tech: 'JavaScript, NodeJS, Express, React, MongoDB'
         },
-        {
-            title: "Project 5",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock1
-        }
+
     ]
 }

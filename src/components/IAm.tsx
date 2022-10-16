@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Container, Typography, createTheme, ThemeProvider } from '@mui/material';
+import { Box, Typography, createTheme, ThemeProvider } from '@mui/material';
 import {info} from '../info/info';
 import Style from "./IAm.module.scss";
 import classNames from "classnames";
