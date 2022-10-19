@@ -16,7 +16,6 @@ import Nginx from './../../images/nginx.png';
 export type Skill = {
   name: string;
   img: any;
-  url: string;
 }
 
 export const getSkill = (names: string[]) => {
@@ -34,72 +33,58 @@ export const getSkill = (names: string[]) => {
 export const skills: Skill[] = [
   {
     name: "JavaScript",
-    url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     img: JS
   },
   {
     name: "TypeScript",
-    url: "https://www.typescriptlang.org/",
     img: TS
   },
   {
     name: "NodeJS",
-    url: "https://nodejs.org/en/",
     img: NodeJS
   },
   {
     name: "React",
-    url: "https://reactjs.org/",
     img: React
   },
   {
     name: "HTML",
-    url: "https://developer.mozilla.org/en-US/docs/Web/HTML",
     img: HTML
   },
   {
     name: "CSS",
-    url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     img: CSS
   },
   {
     name: "Git",
-    url: "https://git-scm.com/",
     img: Git
   },
   {
     name: "Jenkins",
-    url: "https://git-scm.com/",
     img: Jenkins
   },
   {
     name: "Linux",
-    url: "https://git-scm.com/",
     img: Linux
   },
   {
     name: "Java",
-    url: "https://git-scm.com/",
     img: Java
   },
   {
     name: "MongoDB",
-    url: "https://git-scm.com/",
     img: MongoDB
   },
   {
     name: "C#",
-    url: "https://git-scm.com/",
     img: Csharp
   },
   {
     name: "AWS",
-    url: "https://git-scm.com/",
     img: Aws
   },
   {
     name: "Nginx",
-    url: "https://git-scm.com/",
     img: Nginx
   },
 ]

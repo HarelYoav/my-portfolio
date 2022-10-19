@@ -37,7 +37,7 @@ export const info = {
         },
         {
             emoji: '🌎',
-            text: 'based in the IL'
+            text: 'based in IL'
         },
         {
             emoji: "💼",
@@ -61,7 +61,7 @@ export const info = {
         },
 
     ],
-    bio: `Hello, I'm Yoav Harel. I'm a student for Computer Science, and additionally working as Enterprise Tier 1 Support at IBM.
+    bio: `Hello, I'm Yoav Harel. I'm a student for Computer Science, and working as Enterprise Support Tier 1 at IBM.
     I enjoy coding, solving problems, and collaborate with other persons. My hubbies are Hiking, Motorcycle riding, and relax on the beach.  
     I am looking for a role as a software developer intern / student.`,
     skills:
@@ -93,7 +93,7 @@ export const info = {
     portfolio: [ // This is where your portfolio projects will be detailed
         {
             title: "Battle Ship - Online",
-            live: "http://ec2-54-157-85-245.compute-1.amazonaws.com/battle-ship", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.
+            live: "http://yoavharel.com/battle-ship", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.
             source: "https://github.com/paytonjewell", // this should be a link to the **repository** of the project, where the code is hosted.
             image: mock1,
             tech: 'TypeScript, NodeJS, Express, React, Socket.IO, Jenkins CD/CI, AWS'
@@ -101,21 +101,21 @@ export const info = {
         {
             title: "RupBnb",
             live: "http://194.90.158.74/cgroup4/test2/tar5/Pages/index.html",
-            source: "https://github.com/paytonjewell",
+            source: "https://github.com/HarelYoav/Airbnb-ServerSideExam",
             image: mock2,
-            tech: 'C# .net, JavaScrupt, JQuery, SQL, mssql'
+            tech: 'C# .net, JavaScript, JQuery, SQL, mssql'
         },
         {
             title: "My Portfolio",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
+            live: "https://yoavharel.com",
+            source: "https://github.com/HarelYoav/my-portfolio",
             image: mock3,
             tech: 'TypeScript, React, Mui Material, Jenkins CD/CI, AWS'
         },
         {
             title: "Notes and Weather",
             live: "http://mx-dash.herokuapp.com/",
-            source: "https://github.com/paytonjewell",
+            source: "https://github.com/HarelYoav/mx-dashboard",
             image: mock4,
             tech: 'JavaScript, NodeJS, Express, React, MongoDB'
         },

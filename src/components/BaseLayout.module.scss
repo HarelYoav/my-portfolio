@@ -9,7 +9,7 @@ footer {
   color: $white;
   transition: all 400ms;
 
-  a, i, li {
+  a, li {
     color: $white;
     transition: color 400ms;
   }
@@ -30,46 +30,11 @@ footer {
 }
 
 
-//.dark {
-//  background-color: $dark;
-//  color: $white;
-//  transition: all 400ms;
-//  a, i {
-//    color: $white;
-//    transition: color 400ms;
-//  }
-//  a:visited {
-//    color: $white;
-//  }
-//  i:hover {
-//    color: $purple;
-//  }
-//  footer {
-//    color: $white;
-//  }
-//
-//  nav {
-//    background-color: $dark;
-//    transition: $transition;
-//  }
-//
-//  div > section > div:first-child {
-//    background-color: #575e64;
-//    i:first-child {
-//      color: $red;
-//    }
-//    i:nth-child(2) {
-//      color: $yellow;
-//    }
-//    i:nth-child(3) {
-//      color: $green;
-//    }
-//  }
-//
-//
-//  & > div div {
-//    i {
-//      color: white;
-//    }
-//  }
-//}
+.skill {
+  transition: $transition;
+
+  &:hover {
+    transform: translateY(-3px);
+    transition: $transition;
+  }
+}

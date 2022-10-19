@@ -19,7 +19,7 @@ const BaseLayout = () => {
       <Box className={darkMode ? Style.dark : Style.light}>
          <Grid container display={'flex'} flexDirection={'column'} minHeight={'100vh'}
                justifyContent={'space-between'}>
-            <Grid item>
+            <Grid item style={{position: 'sticky', top: 0, zIndex: 1}} className={darkMode ? Style.dark : Style.light}>
                <Navbar darkMode={darkMode} handleClick={handleClick}/>
             </Grid>
             <Grid item xs={12}>
