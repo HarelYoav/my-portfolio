@@ -14,7 +14,7 @@ const Blogs = () => {
           <Typography variant='h5'>
             הגדרת CD/CI Pipeline להעלה אוטומטית של אפליקצייית React לשרת AWS ec2.
           </Typography>
-          <Link to='1' style={{ textDecoration: 'none' }}>
+          <Link to='1'>
             <Button variant='contained'>
               צפה 
             </Button>

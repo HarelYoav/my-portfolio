@@ -27,10 +27,16 @@ footer {
   background-color: $white;
   color: $dark;
   transition: all 400ms;
+
+ 
 }
 
 a:visited {
   color: $dark;
+}
+
+a {
+  text-decoration: none;
 }
 
 

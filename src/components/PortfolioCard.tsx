@@ -27,7 +27,7 @@ function PortfolioBlock({ image, live, source, title, tech }: IProps) {
               <i className={classNames(iconClass, Style.amber)}/>
               <i className={classNames(iconClass, Style.green)}/>
           </Box>
-        <Box component={'img'} src={image} alt={'mockup'} maxHeight={180} width={1}/>
+        <Box component={'img'} src={image} alt={'mockup'} height={180} width={1}/>
         <Box display={'flex'} justifyContent={'center'}>
           <Typography variant='subtitle2' color='primary' fontWeight={600} maxWidth={0.9} py={1}>
             {tech}
