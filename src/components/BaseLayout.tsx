@@ -6,6 +6,8 @@ import {Route, Routes} from "react-router-dom";
 import {Box, Grid} from "@mui/material";
 import AboutMe from '../screens/about/AboutMe';
 import Portfolio from '../screens/portfolio/Portfolio';
+import Blogs from '../screens/blogs/Blogs';
+import Guide from './blog/Guide';
 
 const BaseLayout = () => {
    const [darkMode, setDarkMode] = useState(false);
@@ -25,18 +27,18 @@ const BaseLayout = () => {
             <Grid item xs={12}>
                <Routes>
                   <Route path={'/'} element={<Home/>}/>
-                  <Route path={'/about'} element={<AboutMe/>}/>
-                  <Route path={'/portfolio'} element={<Portfolio/>}/>
+                  <Route path={'about'} element={<AboutMe/>}/>
+                  <Route path={'portfolio'} element={<Portfolio/>}/>
+                  <Route path={'my-blog'} >
+                     <Route index={true} element={<Blogs/>}/>
+                     <Route index={false} path={'1'} element={<Guide/>}/>
+                  </Route>
                </Routes>
-               
-            </Grid>
-            <Grid item xs={12}>
-               
             </Grid>
             <Grid item>
                <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
                     py={'1.5rem'} sx={{opacity: 0.7}} width={'100%'}>
-                  <p>template created by <a href={'https://paytonpierce.dev'}>Yoav Harel</a></p>
+                  <p>template created by <a href={'https://yoavharel.com'}>Yoav Harel</a></p>
                   <p>&copy; 2022</p>
                </Box>
             </Grid>

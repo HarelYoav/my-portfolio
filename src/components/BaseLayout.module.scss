@@ -29,6 +29,10 @@ footer {
   transition: all 400ms;
 }
 
+a:visited {
+  color: $dark;
+}
+
 
 .skill {
   transition: $transition;

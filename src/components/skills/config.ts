@@ -18,17 +18,17 @@ export type Skill = {
   img: any;
 }
 
-export const getSkill = (names: string[]) => {
-  let toReturn: Skill[] = [];
-  names.map((name: string) => {
-    skills.map((skill: Skill) => {
-      if(skill.name.toLowerCase() === name.toLowerCase()) {
-        toReturn.push(skill);
-      }
-    });
-  })
-  return toReturn;
-}
+// export const getSkill = (names: string[]) => {
+//   let toReturn: Skill[] = [];
+//   names.map((name: string) => {
+//     skills.map((skill: Skill) => {
+//       if(skill.name.toLowerCase() === name.toLowerCase()) {
+//         toReturn.push(skill);
+//       }
+//     });
+//   })
+//   return toReturn;
+// }
 
 export const skills: Skill[] = [
   {

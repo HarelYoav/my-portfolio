@@ -17,3 +17,33 @@ li {
     transition: $transition;
   }
 }
+
+.headerLink {
+  a,
+  a:link,
+  a:hover,
+  a:visited,
+  a:active {
+    text-decoration: none;
+  }
+
+  a {
+    color: $dark;
+    transition: $transition;
+  }
+
+  a {
+    color: $dark;
+    transition: $transition;
+  }
+  a:hover {
+    color: $lightgray;
+      transition: $transition;
+  }
+}
+
+
+
+
+
+

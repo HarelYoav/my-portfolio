@@ -22,30 +22,6 @@ li {
     box-sizing: border-box;
 }
 
-a,
-a:link,
-a:hover,
-a:visited,
-a:active {
-    text-decoration: none;
-}
-
-a {
-    color: $dark;
-    transition: color 200ms ease;
-}
-
-
-
-a {
-    color: $dark;
-    transition: color 200ms ease;
-}
-  
-a:hover {
-    color: $lightgray;
-    transition: color 200ms ease;
-}
 
 img {
     max-width: 100%;
@@ -54,3 +30,4 @@ img {
 ul {
     list-style-type: none;
 }
+

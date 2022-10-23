@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Style from './Navbar.module.scss';
 import Toggler from './Toggler';
 import {Link, useLocation} from "react-router-dom";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import {info} from '../info/info';
 
 const links = [
@@ -12,21 +12,27 @@ const links = [
         active: 'home'
     },
     {
-        name: 'About Me',
+        name: 'About me',
         to: '/about',
         active: 'about'
     },
     {
-        name: info.initials,
-        type: 'initials',
-        to: '/',
-        active: 'home'
+      name: 'Portfolio',
+      to: '/portfolio',
+      active: 'portfolio'
     },
     {
-        name: 'Portfolio',
-        to: '/portfolio',
-        active: 'portfolio'
-    }
+      name: 'My-Blog',
+      to: '/my-blog',
+      active: 'my-blog'
+    },
+    // {
+    //     name: info.initials,
+    //     type: 'initials',
+    //     to: '/',
+    //     active: 'home'
+    // },
+    
 ]
 
 interface IProps {
@@ -38,29 +44,27 @@ interface IProps {
 const Navbar = ({ darkMode, handleClick } : IProps) => {
 
     const location = useLocation()
-    const [active, setActive] = useState(location.pathname === '/' ? 'home' : location.pathname.slice(1, location.pathname.length));
+    const [active, setActive] = useState(location.pathname.slice(1, location.pathname.length));
 
     return (
-        // <AppBar>
-        <Box component={'nav'} width={'100%'} borderBottom={1} py={1}>
-            <Box component={'ul'} display={'flex'} justifyContent={'space-evenly'} alignItems={'center'}
-                 gap={{xs: '2rem', md: '8rem'}}
-                 textTransform={'lowercase'} fontSize={'1rem'}>
-                {links.map((link, index) => (
-                    <Box key={index} component={'li'} className={(link.active === active && !link.type) ? Style.active : ''}
-                         sx={{borderImageSource: info.gradient}}>
-                        <Link to={link.to} onClick={() => setActive(link.active)}>
-                            {!link.type && <p style={{paddingBottom: '0.5rem'}}>{link.name}</p>}
-                            {link.type && <h1>{link.name}</h1>}
-                        </Link>
-                    </Box>
-                ))}
-                <li>
-                    <Toggler darkMode={darkMode} handleClick={handleClick}/>
-                </li>
+      <Box component={'nav'} width={'100%'} borderBottom={1} pb={1} pt={2}>
+        <Box component={'ul'} display={'flex'} justifyContent={'space-evenly'} alignItems={'center'}
+            gap={{xs: '1rem', md: '8rem'}} textTransform={'lowercase'} fontSize={'1rem'}>
+          {links.map((link, index) => (
+            <Box key={index} component={'li'} className={link.active === active  ? Style.active : ''}
+                sx={{borderImageSource: info.gradient}}>
+              <Box className={Style.headerLink}>
+                <Link to={link.to} onClick={() => setActive(link.active)}>
+                  <Typography style={{paddingBottom: '0.5rem'}}>{link.name}</Typography>
+                </Link> 
+              </Box>
             </Box>
+            ))}
+            <li>
+              <Toggler darkMode={darkMode} handleClick={handleClick}/>
+            </li>
         </Box>
-        // </AppBar>
+      </Box>
     )
 }
 
