@@ -7,7 +7,7 @@ import {Box, Grid} from "@mui/material";
 import AboutMe from '../screens/about/AboutMe';
 import Portfolio from '../screens/portfolio/Portfolio';
 import Blogs from '../screens/blogs/Blogs';
-import Guide from './blog/Guide';
+import JenkinsPipeline from './guides/jenkinsPipeline/JenkinsPipeline';
 
 const BaseLayout = () => {
    const [darkMode, setDarkMode] = useState(false);
@@ -31,7 +31,7 @@ const BaseLayout = () => {
                   <Route path={'portfolio'} element={<Portfolio/>}/>
                   <Route path={'my-blog'} >
                      <Route index={true} element={<Blogs/>}/>
-                     <Route index={false} path={'1'} element={<Guide/>}/>
+                     <Route index={false} path={'jenkins-pipeline'} element={<JenkinsPipeline/>}/>
                   </Route>
                </Routes>
             </Grid>
