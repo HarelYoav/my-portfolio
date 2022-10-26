@@ -8,7 +8,7 @@ interface IProps {
 
 function IconLink({ link, title, icon }: IProps) {
    return (
-      <a href={link} target={"_blank"} rel="noopener noreferrer">
+      <a href={link} target={"_blank"} rel="noopener noreferrer" style={{textDecoration: 'none'}}>
          <i className={icon}/> {title}
       </a>
    );

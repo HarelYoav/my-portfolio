@@ -9,42 +9,42 @@ import Portfolio from '../screens/portfolio/Portfolio';
 import Blogs from '../screens/blogs/Blogs';
 import JenkinsPipeline from './guides/jenkinsPipeline/JenkinsPipeline';
 
+
 const BaseLayout = () => {
-   const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
+  function handleClick() {
+    setDarkMode(!darkMode);
+  }
 
-   function handleClick() {
-      setDarkMode(!darkMode);
-   }
-
-   return (
-      <Box className={darkMode ? Style.dark : Style.light}>
-         <Grid container display={'flex'} flexDirection={'column'} minHeight={'100vh'}
-               justifyContent={'space-between'}>
-            <Grid item style={{position: 'sticky', top: 0, zIndex: 1}} className={darkMode ? Style.dark : Style.light}>
-               <Navbar darkMode={darkMode} handleClick={handleClick}/>
-            </Grid>
-            <Grid item xs={12}>
-               <Routes>
-                  <Route path={'/'} element={<Home/>}/>
-                  <Route path={'about'} element={<AboutMe/>}/>
-                  <Route path={'portfolio'} element={<Portfolio/>}/>
-                  <Route path={'my-blog'} >
-                     <Route index={true} element={<Blogs/>}/>
-                     <Route index={false} path={'jenkins-pipeline'} element={<JenkinsPipeline/>}/>
-                  </Route>
-               </Routes>
-            </Grid>
-            <Grid item>
-               <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
-                    py={'1.5rem'} sx={{opacity: 0.7}} width={'100%'}>
-                  <p>template created by <a href={'https://yoavharel.com'}>Yoav Harel</a></p>
-                  <p>&copy; 2022</p>
-               </Box>
-            </Grid>
-         </Grid>
-      </Box>
-   )
+  return (
+    <Box className={darkMode ? Style.dark : Style.light}>
+      <Grid container display={'flex'} flexDirection={'column'} minHeight={'100vh'}
+            justifyContent={'space-between'}>
+        <Grid item style={{position: 'sticky', top: 0, zIndex: 1}} className={darkMode ? Style.dark : Style.light}>
+          <Navbar darkMode={darkMode} handleClick={handleClick}/>
+        </Grid>
+        <Grid item xs={12}>
+          <Routes>
+            <Route path={'/'} element={<Home/>}/>
+            <Route path={'about'} element={<AboutMe/>}/>
+            <Route path={'portfolio'} element={<Portfolio/>}/>
+            <Route path={'my-blog'} >
+               <Route index={true} element={<Blogs/>}/>
+               <Route index={false} path={'jenkins-pipeline'} element={<JenkinsPipeline/>}/>
+            </Route>
+          </Routes>
+        </Grid>
+        <Grid item>
+          <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
+              py={'1.5rem'} sx={{opacity: 0.7}} width={'100%'}>
+            <p>template created by <a href={'https://yoavharel.com'}>Yoav Harel</a></p>
+            <p>&copy; 2022</p>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
+  )
 }
 
 export default BaseLayout;

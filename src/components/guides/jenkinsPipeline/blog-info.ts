@@ -8,6 +8,14 @@ import ServerReady from './images/serverReady.png';
 import SSHClient from './images/sshClient.png';
 import FirstConnect from './images/firstConnect.png';
 import FreeRAM from './images/freeRAM.png';
+import JenkinsStatus from './images/jenkinsStatus.png';
+import Security from './images/security.png';
+import EditInboudRule from './images/editInboundRule.png';
+import NewInboudRule from './images/newInboudRule.png';
+import UnlockJenkins from './images/unlockJenkins.png';
+import InstallPlugins from './images/installPlugins.png';
+import FirstAdmin from './images/firstAdmin.png';
+import WelcomeToJenkins from './images/welcomeToJenkins.png';
 
 export const blogImgs = {
   AWSconsole: AWSconsole,
@@ -19,5 +27,13 @@ export const blogImgs = {
   ServerReady: ServerReady,
   SSHClient: SSHClient,
   FirstConnect:FirstConnect,
-  FreeRAM: FreeRAM
+  FreeRAM: FreeRAM,
+  JenkinsStatus: JenkinsStatus,
+  Security: Security,
+  EditInboudRule: EditInboudRule,
+  NewInboudRule: NewInboudRule,
+  UnlockJenkins: UnlockJenkins,
+  InstallPlugins: InstallPlugins,
+  FirstAdmin: FirstAdmin,
+  WelcomeToJenkins: WelcomeToJenkins
 }

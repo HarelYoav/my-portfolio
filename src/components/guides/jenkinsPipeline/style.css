@@ -9,3 +9,15 @@
     margin: 20px auto;
   }
 }
+
+a {
+  text-decoration: underline;
+}
+
+.code {
+  direction: ltr;
+  font-family: Menlo, Monaco, 'Courier New', Courier, monospace;
+  background: #979797;
+  padding: 16px 8px 0;
+  margin-bottom: 16px;
+}

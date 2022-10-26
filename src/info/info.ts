@@ -50,30 +50,6 @@ export const info = {
   bio: `Hello, I'm Yoav Harel. I'm a student for Computer Science, and working as Enterprise Support Tier 1 at IBM.
   I enjoy coding, solving problems, and collaborate with other persons. My hubbies are Hiking, Motorcycle riding, and relax on the beach.  
   I am looking for a role as a software developer intern / student.`,
-  skills:
-    {
-      proficientWith: ['javascript', 'react', 'git', 'github', 'bootstrap', 'html5', 'css3', 'figma'],
-      exposedTo: ['nodejs', 'python', 'adobe illustrator']
-    }
-  ,
-  hobbies: [
-    {
-      label: 'reading',
-      emoji: '📖'
-    },
-    {
-      label: 'theater',
-      emoji: '🎭'
-    },
-    {
-        label: 'movies',
-        emoji: '🎥'
-    },
-    {
-        label: 'cooking',
-        emoji: '🌶'
-    }
-  ],
   portfolio: [ 
     {
       title: "Battle Ship - Online",

@@ -9,13 +9,11 @@ import {
   createTheme,
 } from '@mui/material';
 import './style.css';
-import { maxWidth } from '@mui/system';
-
 
 const theme = createTheme();
 theme.typography.subtitle1 = {
   margin: '1rem 0',
-  fontSize: '1.15rem',
+  fontSize: '1.25rem',
   fontWeight: 600
 }
 theme.typography.body1 = {
@@ -145,20 +143,183 @@ const JenkinsPipeline = () => {
         <Typography variant='body1'>
           <b>ב.</b>	הריצו את הפקודות הבאות אחת אחרי השנייה על מנת להקצות 4GB מהארד דיסק שישמש בתור זכרון Swap: 
         </Typography>
-        <Box dir={'ltr'} p={5} sx={{background: '#F2F2F2', fontFamily: 'Menlo, Monaco, "Courier New", Courier, monospace'}}>
+        <Box className='code'>
           <Typography>
-            sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=4096
+            $ sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=4096
           </Typography>
           <Typography>
-            sudo /sbin/mkswap /var/swap.1
+            $ sudo /sbin/mkswap /var/swap.1
           </Typography>
           <Typography>
-            sudo chmod 600 /var/swap.1
+            $ sudo chmod 600 /var/swap.1
           </Typography>
           <Typography>
-            sudo /sbin/swapon /var/swap.1
+            $ sudo /sbin/swapon /var/swap.1
           </Typography>
         </Box>
+        <Typography variant='body1'>
+          עכשיו אם תריצו שוב את הפקודה free -h תוכלו לראות שהוקצה זכרון swap. 
+        </Typography>
+        <Typography variant='subtitle1'>
+          3.	התקנת JAVA על השרת (Jenkins  משתמש בJava)
+        </Typography>
+        <Typography variant='body1'>
+          הריצו את הפקודה על מנת לעדכן את רשימת החבילות הזמינות
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            $ sudo apt update
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+          הריצו את הפקודה להתקנת Java
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            $ sudo apt install default-jre
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+          פדוקה על מנת לוודא איזו גרסת Java הותקנה
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            $ java -version
+          </Typography>
+        </Box>
+        <Typography variant='subtitle1'>
+          4.	התקנת Jenkins - מקור: https://www.jenkins.io/doc/book/installing/linux/
+        </Typography>
+        <Typography variant='body1'>
+          הריצו את הפקודות הבאות אחת אחרי השניה - <a href='https://www.jenkins.io/doc/book/installing/linux/'>מקור</a>
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            $ curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \  /usr/share/keyrings/jenkins-keyring.asc {'>'} /dev/null
+          </Typography>
+          <Typography>
+            $ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+            https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+            /etc/apt/sources.list.d/jenkins.list {'>'} /dev/null
+          </Typography>
+          <Typography>
+            $ sudo apt-get update
+          </Typography>
+          <Typography>
+            $ sudo apt-get install jenkins
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+            לאחר שההתקנה הסתיימה בהצלחה נתחיל את פעולת Jenkins
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            $ sudo systemctl start jenkins
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+          ונבדוק שJenkins אכן רץ על השרת שלנו
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            $	sudo systemctl status jenkins
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+          כך נראית ההודעה כשאר Jenkins  רץ על השרת:
+        </Typography>
+        <Box component="img" src={blogImgs.JenkinsStatus} alt='' className='image'/>
+        <Typography variant='body1'>
+          על מנת לתחבר לJenkins הכניסו בדפדפן את הכתובת הבאה: 
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            {'http://<your-server-ip-adress>:<Jenkins-port>'}
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+          לדוגמא אם הIP של השרת שלכם הוא 123.456.789.321 וJenkins מאזין לפורט 8080 
+        </Typography>
+        <Typography variant='body1'>
+          תכניס בדפדפן את הכתובת הבאה:
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            http://123.456.789.321:8080 
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+          בתור ברירת מחדל Jenkins מאזין לבקשות בפורט 8080 (ניתן לשנות זו, אך לא נעשה זאת במדריך הזה). <br/>
+          עכשיו תשימו לב שהדף לא יטען, כיוון שאנו צריכים לאשר תקשורת נכנסת בפורט 8080 בשרת שלנו.
+        </Typography>
+        <Typography variant='body1'>
+          כאשר הקמנו את השרת שלנו, נתנו הרשאות לתעבורה נכנסת בפורטוקולים SSH וHTTP מכל IP שהוא. כעת נאפשר גם תקשורת נכנסת בפרוטוקול TCP בפורט 8080.
+        </Typography>
+        <Typography variant='body1'>
+          כאשר אתם במסך ניהול השרת שלכם, לחצו על הטאב הSecurity ולאחר מכן לחצו על הSecurity Group המוגדר לכם.
+        </Typography>
+        <Box component="img" src={blogImgs.Security} alt='' className='image'/>
+        <Typography variant='body1'>
+          לאחר מכן לחצו על Edit inbound rules 
+        </Typography>
+        <Box component="img" src={blogImgs.EditInboudRule} alt='' className='image'/>
+        <Typography variant='body1'>
+          הוסיפו Rule חדש כפי שמופיע בתמונה הבאה ולחצו על Save rules:
+        </Typography>
+        <Box component="img" src={blogImgs.NewInboudRule} alt='' className='image'/>
+        <Typography variant='body1'>
+          ועכשיו נסו שוב לנווט אל:
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            {'http://<your-server-ip-adress>:8080'}
+          </Typography>
+        </Box>
+        <Box component="img" src={blogImgs.UnlockJenkins} alt='' className='image'/>
+        <Typography variant='body1'>
+          אתם יכולים לצפות בססמת המנהל שלכם ע"י הרצת הפקודה הבאה בטרמינל של השרת שלכם:  
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+          הכניסו את הססמא ויופיע לכם החלון הבא: <br/>
+          בחרו בInstall suggested plugins, ותראו את מסך ההתקנה.
+        </Typography>
+        <Box component="img" src={blogImgs.InstallPlugins} alt='' className='image'/>
+        <Typography variant='body1'>
+          לאחר שהסתיימה ההתקנה, תצטרכו להגדיר את חשבון הAdmin  הראשון שלכם. <br/>
+          חשוב שאת הפרטים הללו תזכרו, כיוון שהם ישמשו אותכם להתחבר אל Jenkins בפעמים הבאות.
+        </Typography>
+        <Box component="img" src={blogImgs.FirstAdmin} alt='' className='image'/>
+        <Typography variant='body1'>
+          וברוכים הבאים ל Jenkins :)
+        </Typography>
+        <Box component="img" src={blogImgs.WelcomeToJenkins} alt='' className='image'/>
+        <Typography variant='subtitle1'>
+          5.	התקנת Node js – הריצו את הפקודות הבאות:
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            $	curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash
+          </Typography>
+          <Typography>
+            $	sudo apt-get install -y nodejs
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+          כדי לבדקו שההתקנה עברה בהצלחה, הריצו בטרמינל:
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            $	node -v
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+          אם node  הותקן כפי שצריך תופיע לכם הגרסא המותקנת אצלכם.
+        </Typography>
       </Box>
     </ThemeProvider>
 

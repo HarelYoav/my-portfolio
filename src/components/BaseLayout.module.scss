@@ -29,21 +29,19 @@ footer {
   transition: all 400ms;
 }
 
-a:visited {
+a, a:visited {
   color: $dark;
 }
 
-a {
-  text-decoration: none;
-}
 
 
-.skill {
-  transition: $transition;
+// .skill {
+//   transition: $transition;
 
-  &:hover {
-    transform: translateY(-3px);
-    transition: $transition;
-  }
-}
+//   &:hover {
+//     transform: translateY(-3px);
+//     transition: $transition;
+//   }
+// }
+
 
