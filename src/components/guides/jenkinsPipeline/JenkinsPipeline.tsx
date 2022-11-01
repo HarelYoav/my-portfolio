@@ -12,7 +12,7 @@ import './style.css';
 
 const theme = createTheme();
 theme.typography.subtitle1 = {
-  margin: '1rem 0',
+  margin: '1.5rem 0 0.25rem',
   fontSize: '1.25rem',
   fontWeight: 600
 }
@@ -188,7 +188,7 @@ const JenkinsPipeline = () => {
           </Typography>
         </Box>
         <Typography variant='subtitle1'>
-          4.	התקנת Jenkins - מקור: https://www.jenkins.io/doc/book/installing/linux/
+          4.	התקנת Jenkins
         </Typography>
         <Typography variant='body1'>
           הריצו את הפקודות הבאות אחת אחרי השניה - <a href='https://www.jenkins.io/doc/book/installing/linux/'>מקור</a>

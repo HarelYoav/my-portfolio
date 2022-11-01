@@ -12,23 +12,14 @@ import MongoDB from './../../images/mongodb.png';
 import Csharp from './../../images/c#.png';
 import Aws from './../../images/aws.png';
 import Nginx from './../../images/nginx.png';
+import Python from './../../images/python.png';
 
 export type Skill = {
   name: string;
   img: any;
 }
 
-// export const getSkill = (names: string[]) => {
-//   let toReturn: Skill[] = [];
-//   names.map((name: string) => {
-//     skills.map((skill: Skill) => {
-//       if(skill.name.toLowerCase() === name.toLowerCase()) {
-//         toReturn.push(skill);
-//       }
-//     });
-//   })
-//   return toReturn;
-// }
+
 
 export const skills: Skill[] = [
   {
@@ -38,6 +29,18 @@ export const skills: Skill[] = [
   {
     name: "TypeScript",
     img: TS
+  },
+  {
+    name: "C#",
+    img: Csharp
+  },
+  {
+    name: "Java",
+    img: Java
+  },
+  {
+    name: "Python",
+    img: Python
   },
   {
     name: "NodeJS",
@@ -68,17 +71,10 @@ export const skills: Skill[] = [
     img: Linux
   },
   {
-    name: "Java",
-    img: Java
-  },
-  {
     name: "MongoDB",
     img: MongoDB
   },
-  {
-    name: "C#",
-    img: Csharp
-  },
+ 
   {
     name: "AWS",
     img: Aws
