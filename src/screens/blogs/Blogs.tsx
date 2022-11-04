@@ -9,7 +9,7 @@ const Blogs = () => {
       <Typography variant='h3' mb={2}>
         הדף עדיין בבנייה
       </Typography>
-      <Card>
+      <Card sx={{backgroundColor: 'inherit', color: 'inherit', boxShadow: 'rgba(0, 0, 0, 0.16) 2px 2px 2px 5px'}}>
         <Box display={'flex'} p={4} justifyContent={'space-between'} gap={2}>
           <Typography variant='h5'>
             הגדרת CD/CI Pipeline להעלה אוטומטית של אפליקצייית React לשרת AWS ec2.
