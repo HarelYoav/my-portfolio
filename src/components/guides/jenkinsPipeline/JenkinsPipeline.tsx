@@ -280,7 +280,7 @@ const JenkinsPipeline = () => {
           אתם יכולים לצפות בססמת המנהל שלכם ע"י הרצת הפקודה הבאה בטרמינל של השרת שלכם:  
         </Typography>
         <Box className='code'>
-          <Typography>
+          <Typography style={{ wordWrap: "break-word" }}>
             $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
           </Typography>
         </Box>
@@ -302,7 +302,7 @@ const JenkinsPipeline = () => {
           5.	התקנת Node js – הריצו את הפקודות הבאות:
         </Typography>
         <Box className='code'>
-          <Typography>
+          <Typography style={{ wordWrap: "break-word" }}>
             $	curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash
           </Typography>
           <Typography>
@@ -320,6 +320,98 @@ const JenkinsPipeline = () => {
         <Typography variant='body1'>
           אם node  הותקן כפי שצריך תופיע לכם הגרסא המותקנת אצלכם.
         </Typography>
+        <Typography variant='subtitle1'>
+          6.	התקנת  Nginx  - הריצו את הפקודה הבאה:
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            $	sudo apt install -y nginx
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+          הכניסו את ה- IP של השרת שלכם בדפדפן, אם Nginx הותקן ורץ תראו את הדף 
+        </Typography>
+        <Box component="img" src={blogImgs.WelcomeNginx} alt='' className='image'/>
+        <Typography variant='body1'>
+          כך תוכלו לדעת שאכן Nginx מותקן ורץ על השרת שלכם. <br/>
+          נשנה מעט את קובץ ההגדרה הדיפולטיבי של Nginx על מנת שיגיש לנו את האפליקציה שלנו (כאשר תהיה על השרת) במקום את הדף הדיפולטיבי.
+        </Typography>
+        <Typography variant='body1'>
+          ניצור תיקייה שבה גם נאחסן מאוחר יותר את הBuild של האפליקציה שלנו. ושממנה Nginx יגיש את האפליקציה שלנו לעולם החיצוני.
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            $	sudo mkdir /var/www/sample-app
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+          לאחר יצירת התיקייה, פתחו את הקובץ הבא לעריכה (עם כל עורך טקסט שבא לכם- אני משתמש בvim):         
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            $	sudo vim /etc/nginx/site-available/default
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+          מחקו את תוכן הקובץ, והדביקו את התוכן הבא:
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            {`server {`}
+          </Typography>
+          <Typography ml={2}>
+            {`listen 80 default_server;`} <br/>
+            {`server_name _;`} <br/><br/>
+            {`location / {`}
+          </Typography>
+          <Typography ml={4}>
+            {`root /var/www/sample-app;`}
+            {`try_files $uri /index.html;`}
+          </Typography>
+          <Typography ml={2}>
+            {`}`}
+          </Typography>
+          <Typography>
+            {`}`}
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+          כך תגדירו לNginx מאיזה תיקייה ואיזה קובץ להגיש כאשר מגיעות בקשות לפורט 80 (HTTP)
+        </Typography>
+        <Typography variant='body1'>
+          נאתחל מחדש את Nginx כך שיכיר את השינויים שביצענו על ידי הפקודה:
+        </Typography>
+        <Box className='code'>
+          <Typography>
+            $ sudo systemctl restart nginx
+          </Typography>
+        </Box>
+        <Typography variant='subtitle1'>
+          7.	יצירת ה -   pipeline בJenkins:
+        </Typography>
+        <Typography variant='body1'>
+          1.	התחברו ל Jenkins בשרת שלכם ולחצו על “New Item”
+        </Typography>
+        <Box component="img" src={blogImgs.JenkinsNewItem} alt='' className='image'/>
+        <Typography variant='body1'>
+          2.	תנו שם לאותו Item (השם מייצג את התיקייה בה Jenkins יאחסן את הפרוייקט) , ובחרו בPipeline ולחצו OK.
+        </Typography>
+        <Box component="img" src={blogImgs.JenkinsPipelineItem} alt='' className='image'/>
+        <Typography variant='body1'>
+          3.	תחת Build Triggers, סמנו GitHub hook trigger כפי שמופיע בתמונה הבאה:
+        </Typography>
+        <Box component="img" src={blogImgs.BuildTriggers} alt='' className='image'/>
+        <Typography variant='body1'>
+          4.	תחת Pipeline, בחרו ומלאו את הפרטים הבאים:
+        </Typography>
+        <Box component="img" src={blogImgs.JenkinsPipeline} alt='' className='image'/>
+        <Typography variant='body1'>
+          במידה ופרוייקט שלכם הוא Private בGitHub תוכלו להוסיף את שם המשתמש והToken שלכם על מנת לאפשר לJenkins גישה. 
+        </Typography>
+        <Typography variant='body1'>
+          סרטון שמראה איך לעשות זאת : <a href='https://www.youtube.com/watch?v=HSA_mZoADSw'>לינק</a>
+        </Typography>
+
       </Box>
     </ThemeProvider>
 
