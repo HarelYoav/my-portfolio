@@ -21,6 +21,11 @@ import JenkinsNewItem from './images/jenkinsNewItem.png';
 import JenkinsPipelineItem from './images/jenkinsPipelineItem.png';
 import BuildTriggers from './images/buildTriggers.png';
 import JenkinsPipeline from './images/jenkinsPipeline.png';
+import JenkinsFile from './images/jenkinsFile.png';
+import SudoFile from './images/sudoFile.png';
+import GitHubWebhook from './images/gitHubWebhook.png';
+import FirstJenkinsJob from './images/firstJenkinsJob.png';
+import HelloWorld from './images/helloWorld.png';
 
 export const blogImgs = {
   AWSconsole: AWSconsole,
@@ -46,4 +51,9 @@ export const blogImgs = {
   JenkinsPipelineItem: JenkinsPipelineItem,
   BuildTriggers: BuildTriggers,
   JenkinsPipeline: JenkinsPipeline,
+  JenkinsFile: JenkinsFile,
+  SudoFile: SudoFile,
+  GitHubWebhook: GitHubWebhook,
+  FirstJenkinsJob: FirstJenkinsJob,
+  HelloWorld: HelloWorld,
 }

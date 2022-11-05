@@ -27,9 +27,13 @@ theme.typography.body1 = {
 
 
 const JenkinsPipeline = () => {
+
+  // eslint-disable-next-line no-template-curly-in-string
+  const WORKSPACE = "${WORKSPACE}"
+
   return (
     <ThemeProvider theme={theme}>
-      <Box dir={'rtl'} maxWidth='md' display={'flex'} flexDirection={'column'} mx={'auto'} px={2}>
+      <Box dir={'rtl'} maxWidth='md' display={'flex'} flexDirection={'column'} mx={'auto'} px={2} pb={5}>
         <Box py={2} my={2}>
           <Typography variant='h4' textAlign={'center'}>
             הגדרת CD/CI Pipeline להעלאה אוטומטית של אפליקציית React לשרת AWS ec2.
@@ -411,7 +415,115 @@ const JenkinsPipeline = () => {
         <Typography variant='body1'>
           סרטון שמראה איך לעשות זאת : <a href='https://www.youtube.com/watch?v=HSA_mZoADSw'>לינק</a>
         </Typography>
-
+        <Typography variant='body1'>
+          הגדרנו לJenkins שאת הפקודות שהוא צריך לבצע נגיש לו בקובץ שנקרא Jenkinsfile. <br/>
+          הוסיפו את Jenkinsfile בתיקיית השורש (root) של האפליקציה שלכם.
+        </Typography>
+        <Box className='code'>
+          <Typography mb={0}>
+            {`pipline {`}
+          </Typography>
+          <Typography ml={2} mb={0}>
+            {`agent any`} <br/>
+            {`stages {`}
+          </Typography>
+          <Typography ml={4} mb={0}>
+            {`stage("Build") {`}
+          </Typography>
+          <Typography ml={6} mb={0}>
+            {`steps {`}
+          </Typography>
+          <Typography ml={8} mb={0}>
+            {`sh "sudo npm install"`} <br/>
+            {`sh "sudo mkdir -p node_modules/.cache && sudo chmod -R 777 node_modules/.cache"`} <br/>
+            {`sh "sudo npm run build"`}
+          </Typography>
+          <Typography ml={6} mb={0}>
+            {`}`} 
+          </Typography>
+          <Typography ml={4} mb={0}>
+            {`}`} 
+          </Typography>
+          <Typography ml={4} mb={0}>
+            {`stage("Deploy") {`}
+          </Typography>
+          <Typography ml={6} mb={0}>
+            {`steps {`}
+          </Typography>
+          <Typography ml={8} mb={0}>
+            {`sh "sudo rm -rf /var/www/sample-app"`} <br/>
+            {`sh "sudo cp -r ${WORKSPACE}/build/ /var/www/sample-app/"`}
+          </Typography>
+          <Typography ml={6} mb={0}>
+            {`}`} 
+          </Typography>
+          <Typography ml={4} mb={0}>
+            {`}`} 
+          </Typography>
+          <Typography ml={2} mb={0}>
+            {`}`} 
+          </Typography>
+          <Typography mb={0}>
+            {`}`} 
+          </Typography>
+        </Box>
+        <Box component="img" src={blogImgs.JenkinsFile} alt='' className='image'/>
+        <Typography variant='body1'>
+          כפי שאתם יכולים לראות, Jenkins צריך להריץ פקודות עם הרשאות superuser. <br/>
+          אנו צריכים לתת לו את ההרשאות המתאימות על מנת שיוכלו לבצע אותן.
+        </Typography>
+        <Typography variant='body1' sx={{fontWeight: 'bold'}}>
+          אזהרה: וודאו שאתם מעתיקים נכון את השורות הבאות, אם תהיה טעות בקובץ יכול לקרות מצב שלא ניתן יהיה להריץ פקודות sudo יותר, ולחזור אחורה קשה מאוד.
+        </Typography>
+        <Typography variant='body1'>
+          פתחו את הקובץ הבא לעריכה (אני משתמש בvim): sudo vim /etc/sudoers <br/>
+          והוסיפו את השורות הבאות בתחתית הקובץ:
+        </Typography>
+        <Box className='code'>
+          <Typography >
+            jenkins ALL=(ALL) NOPASSWD: /usr/bin/npm install <br/>
+            jenkins ALL=(ALL) NOPASSWD: /usr/bin/npm run build <br/>
+            jenkins ALL=(ALL) NOPASSWD: /usr/mkdir -p node_modules/.cache <br/>
+            jenkins ALL=(ALL) NOPASSWD: /usr/chmod -R 777 node_modules/.cache <br/>
+            jenkins ALL=(ALL) NOPASSWD: /bin/rm -rf /var/www/sample-app <br/>
+            jenkins ALL=(ALL) NOPASSWD: /bin/cp -r /var/lib/jenkins/workspace/sample-app/build/ /var/www/sample-app/ <br/>
+          </Typography>
+        </Box>
+        <Typography variant='body1'>
+         הקובץ צריך להראות כך:
+        </Typography>
+        <Box component="img" src={blogImgs.SudoFile} alt='' className='image'/>
+        <Typography variant='body1'>
+          זה בעצם נותן גישה לJenkins לפקודות הספציפיות הללו אפשרות להשתמש בsudo ללא ססמא.
+        </Typography>
+        <Typography variant='body1'>
+          מה שנשאר לכם עכשיו לעשות הוא לדחוף את האפליקצייה שלכם לGitHub לאחר שהוספתם את Jenkinsfile. 
+        </Typography>
+        <Typography variant='body1'>
+          ובואו נגדיר את השלב האחרון 😊 הוספת Hook לGitHub על מנת שיתריע לJenkins בכל פעם שעלתה גרסא חדשה.
+        </Typography>
+        <Typography variant='body1'>
+          כאשר אתם בתיקייה שלכם בGitHub, לחצו על Settings  ולאחר מכן בחרו Webhooks.
+        </Typography>
+        <Typography variant='body1'>
+          {`Payload URL: http://<public-dns-hostname>:8080/github-webhook`}
+        </Typography>
+        <Box component="img" src={blogImgs.GitHubWebhook} alt='' className='image'/>
+        <Typography variant='body1'>
+          זהו! סיימנו להגדיר את הpipeline.
+        </Typography>
+        <Typography variant='body1'>
+          כל מה שנשאר לנו עכשיו זה להפעיל את הג'וב בJekins בפעם הראשונה באופן ידני, ולאחר מכן בכל push לGitHub זה יקרה באופן אוטומטי.
+        </Typography>
+        <Box component="img" src={blogImgs.FirstJenkinsJob} alt='' className='image'/>
+        <Typography variant='body1'>
+          לאחר שהסתיימו כל השלבים בהצלחה 😊, נווטו אל כתובת השרת שלכם (שימו לב לשנות אותה מHTTPS ל HTTP) ותראו בדפדפן את האפליקציה שלכם.
+        </Typography>
+        <Box component="img" src={blogImgs.HelloWorld} alt='' className='image'/>
+        <Typography variant='body1'>
+          עכשיו עשו כל שינוי באפליקציה, עשו push לGitHub ותראו את Jenkins מתחיל את העבודה אוטומטית. <br/>
+          לאחר סיום תעשו ריפרש בדפדפן על מנת לראות את הגרסא העדכנית של האפליקציה שלכם.
+        </Typography>
       </Box>
     </ThemeProvider>
 
