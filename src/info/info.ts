@@ -47,9 +47,10 @@ export const info = {
       label: 'linkedin'
     },
   ],
-  bio: `Hello, I'm Yoav Harel. I'm a student for Computer Science, and working as Enterprise Support Tier 1 at IBM.
-  I enjoy coding, solving problems, and collaborate with other persons. My hubbies are Hiking, Motorcycle riding, and relax on the beach.  
-  I am looking for a role as a software developer intern / student.`,
+  bio: `Hello, I'm Yoav Harel. Currently, I'm studying Computer Science and working as an Enterprise Support Tier 1. I am
+  passionate about coding, problem-solving, and collaborating with others. In my free time, I
+  enjoy hiking, motorcycle riding, and relaxing on the beach. As this is my last semester, I am
+  looking for a full-time junior software developer role.`,
   portfolio: [ 
     {
       title: "Battle Ship - Online",
