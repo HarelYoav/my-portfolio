@@ -26,7 +26,29 @@ const Experience= () => {
             align="right"
             variant="body2"
           >
-            April, 2022 - Now
+            June, 2023 - Now
+          </TimelineOppositeContent>
+          <TimelineSeparator>
+            <TimelineConnector />
+            <TimelineDot color="primary">
+              <WorkIcon />
+            </TimelineDot>
+            <TimelineConnector />
+          </TimelineSeparator>
+          <TimelineContent sx={{ py: '12px', px: 2 }}>
+            <Typography variant="h6" component="span">
+              Developer Support Engineer
+            </Typography>
+            <Typography>JFrog</Typography>
+          </TimelineContent>
+        </TimelineItem>
+        <TimelineItem>
+          <TimelineOppositeContent
+            sx={{ m: 'auto 0' }}
+            align="right"
+            variant="body2"
+          >
+            April, 2022 - May, 2023
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
@@ -47,7 +69,7 @@ const Experience= () => {
             sx={{ m: 'auto 0' }}
             variant="body2"
           >
-            2020 - Now
+            2020 - 2023
           </TimelineOppositeContent>
           <TimelineSeparator>
             <TimelineConnector />
