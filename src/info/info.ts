@@ -28,7 +28,7 @@ export const info = {
     },
     {
       emoji: "💼",
-      text: "Enterprise Support Tier 1 at IBM"
+      text: "Developer Support Engineer at JFrog"
     },
     {
       emoji: "📧",
