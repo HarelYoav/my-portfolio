@@ -54,7 +54,7 @@ export const info = {
   portfolio: [ 
     {
       title: "Battle Ship - Online",
-      live: "http://localhost/battle-ship", 
+      live: "http://yoavharel.com/battle-ship", 
       source: "https://github.com/HarelYoav/BattleShip-React-Multiplayer", 
       image: mock1,
       tech: 'TypeScript, NodeJS, Express, React, Socket.IO, Jenkins CD/CI, AWS'
@@ -68,7 +68,7 @@ export const info = {
     },
     {
       title: "My Portfolio",
-      live: "https://localhost.com",
+      live: "https://yoavharel.com",
       source: "https://github.com/HarelYoav/my-portfolio",
       image: mock3,
       tech: 'TypeScript, React, Mui Material, Jenkins CD/CI, AWS'
