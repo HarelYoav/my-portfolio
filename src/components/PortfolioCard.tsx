@@ -9,7 +9,7 @@ const iconClass = "fa fa-circle";
 
 interface IProps {
     image: string;
-    live: string;
+    live: string | undefined;
     source: string;
     title: string;
     tech: string;
@@ -35,8 +35,8 @@ function PortfolioBlock({ image, live, source, title, tech }: IProps) {
         </Box>
         <Box className={'portfolio'} display={'flex'} flexDirection={'row'} gap={'0.5rem'}
           alignItems={'center'} justifyContent={'space-around'} fontSize={'1.5rem'} fontWeight={400} pb={'2rem'} py={'1rem'}>
-            <IconLink link={live} title={'Live'} icon={'fa fa-chrome'}/>
-            <IconLink link={source} title={'GitHub'} icon={'fa fa-github'}/>
+            <IconLink link={live} title={'Live'} icon={'fa fa-chrome'} blank={false}/>
+            <IconLink link={source} title={'GitHub'} icon={'fa fa-github'} blank={true}/>
         </Box>
       </Box>
      </Box>

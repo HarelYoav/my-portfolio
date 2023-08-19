@@ -1,14 +1,16 @@
 import React from 'react';
 
 interface IProps {
-    link: string;
+    link: string | undefined;
     title: string;
     icon: string;
+    blank: boolean | undefined;
 }
 
-function IconLink({ link, title, icon }: IProps) {
+function IconLink({ link, title, icon, blank }: IProps) {
+   const target = blank ? "_blank" : "_self"
    return (
-      <a href={link} target={"_blank"} rel="noopener noreferrer" style={{textDecoration: 'none'}}>
+      <a href={link?.length ? link : ''} target={target} rel="noopener noreferrer" style={{textDecoration: 'none'}}>
          <i className={icon}/> {title}
       </a>
    );

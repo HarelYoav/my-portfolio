@@ -47,14 +47,14 @@ export const info = {
       label: 'linkedin'
     },
   ],
-  bio: `Hello, I'm Yoav Harel. Currently, I'm studying Computer Science and working as an Enterprise Support Tier 1. I am
+  bio: `Hello, I'm Yoav Harel. BSc computer Science and working as Developer Support at JFrog. I am
   passionate about coding, problem-solving, and collaborating with others. In my free time, I
-  enjoy hiking, motorcycle riding, and relaxing on the beach. As this is my last semester, I am
-  looking for a full-time junior software developer role.`,
+  enjoy hiking, motorcycle riding, and relaxing on the beach. I am
+  looking for a full-time junior Devops / Backend Developer position.`,
   portfolio: [ 
     {
       title: "Battle Ship - Online",
-      live: "http://yoavharel.com/battle-ship", 
+      live: "http://localhost/battle-ship", 
       source: "https://github.com/HarelYoav/BattleShip-React-Multiplayer", 
       image: mock1,
       tech: 'TypeScript, NodeJS, Express, React, Socket.IO, Jenkins CD/CI, AWS'
@@ -68,14 +68,14 @@ export const info = {
     },
     {
       title: "My Portfolio",
-      live: "https://yoavharel.com",
+      live: "https://localhost.com",
       source: "https://github.com/HarelYoav/my-portfolio",
       image: mock3,
       tech: 'TypeScript, React, Mui Material, Jenkins CD/CI, AWS'
     },
     {
       title: "Notes and Weather",
-      live: "http://mx-dash.herokuapp.com/",
+      // live: "http://mx-dash.herokuapp.com/",
       source: "https://github.com/HarelYoav/mx-dashboard",
       image: mock4,
       tech: 'JavaScript, NodeJS, Express, React, MongoDB, Redux'
