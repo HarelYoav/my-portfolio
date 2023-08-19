@@ -47,17 +47,17 @@ export const info = {
       label: 'linkedin'
     },
   ],
-  bio: `Hello, I'm Yoav Harel. BSc computer Science and working as Developer Support at JFrog. I am
-  passionate about coding, problem-solving, and collaborating with others. In my free time, I
-  enjoy hiking, motorcycle riding, and relaxing on the beach. I am
-  looking for a full-time junior Devops / Backend Developer position.`,
+  bio: `Hello, I'm Yoav Harel and I'm looking for a full-time position as a junior DevOps / Backend Developer. 
+        Currently I am working as a Developer Support at JFrog and hold a BSc in Computer Science. 
+        I am passionate about coding, problem-solving, and collaborating with others. 
+        In my free time, I enjoy hiking, motorcycle riding, and relaxing on the beach.`,
   portfolio: [ 
     {
       title: "Battle Ship - Online",
       live: "http://yoavharel.com/battle-ship", 
       source: "https://github.com/HarelYoav/BattleShip-React-Multiplayer", 
       image: mock1,
-      tech: 'TypeScript, NodeJS, Express, React, Socket.IO, Jenkins CD/CI, AWS'
+      tech: 'TypeScript, NodeJS, Express, React, Socket.IO, Docker, Jenkins CD/CI, AWS'
     },
     {
       title: "RupBnb",
@@ -71,7 +71,7 @@ export const info = {
       live: "https://yoavharel.com",
       source: "https://github.com/HarelYoav/my-portfolio",
       image: mock3,
-      tech: 'TypeScript, React, Mui Material, Jenkins CD/CI, AWS'
+      tech: 'TypeScript, React, Mui Material, Docker, Jenkins CD/CI, AWS'
     },
     {
       title: "Notes and Weather",

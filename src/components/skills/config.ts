@@ -1,6 +1,4 @@
 import React from "./../../images/react-logo.png";
-import HTML from "./../../images/html5-logo.png";
-import CSS from "./../../images/css-logo.png";
 import JS from "./../../images/js-logo.png";
 import TS from "./../../images/ts-logo.png";
 import Git from "./../../images/git-logo.png";
@@ -13,6 +11,11 @@ import Csharp from './../../images/c#.png';
 import Aws from './../../images/aws.png';
 import Nginx from './../../images/nginx.png';
 import Python from './../../images/python.png';
+import Docker from '../../images/docker.png';
+import Bash from '../../images/bash.png';
+import K8s from '../../images/Kubernetes.png';
+
+
 
 export type Skill = {
   name: string;
@@ -22,6 +25,10 @@ export type Skill = {
 
 
 export const skills: Skill[] = [
+  {
+    name: "Python",
+    img: Python
+  },
   {
     name: "JavaScript",
     img: JS
@@ -39,10 +46,6 @@ export const skills: Skill[] = [
     img: Java
   },
   {
-    name: "Python",
-    img: Python
-  },
-  {
     name: "NodeJS",
     img: NodeJS
   },
@@ -51,12 +54,24 @@ export const skills: Skill[] = [
     img: React
   },
   {
-    name: "HTML",
-    img: HTML
+    name: "Nginx",
+    img: Nginx
   },
   {
-    name: "CSS",
-    img: CSS
+    name: "Linux",
+    img: Linux
+  },
+  {
+    name: "Bash",
+    img: Bash
+  },
+  {
+    name: "Docker",
+    img: Docker
+  },
+  {
+    name: "Kubernetes",
+    img: K8s
   },
   {
     name: "Git",
@@ -67,20 +82,13 @@ export const skills: Skill[] = [
     img: Jenkins
   },
   {
-    name: "Linux",
-    img: Linux
+    name: "AWS",
+    img: Aws
   },
   {
     name: "MongoDB",
     img: MongoDB
   },
- 
-  {
-    name: "AWS",
-    img: Aws
-  },
-  {
-    name: "Nginx",
-    img: Nginx
-  },
+
+
 ]
