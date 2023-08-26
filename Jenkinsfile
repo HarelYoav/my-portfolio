@@ -18,7 +18,7 @@ pipeline {
             steps { 
                 script{
                      
-                 app = docker.build("yoavdocker89" + "/my-portfolio", "${WORKSPACE}/my-portfolio")
+                 app = docker.build("yoavdocker89" + "/my-portfolio", ".")
                 }
             }
         }
