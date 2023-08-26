@@ -1,17 +1,37 @@
 pipeline {
-     agent any
-     stages {
-        stage("Build") {
-            steps {
-                sh "sudo npm install"
-                sh "sudo npm run build"
+    agent any
+    options {
+        skipStagesAfterUnstable()
+    }
+    stages {
+        //  stage('Clone') { 
+
+        //     steps {
+        //         git branch: 'main', url: "https://github.com/HarelYoav/portfolio-project-docker-compose.git"
+        //         echo "empty"
+        //     }
+            
+            
+        // }
+
+        stage('Build') { 
+            steps { 
+                script{
+                     
+                 app = docker.build("yoavdocker89" + "/my-portfolio", "${WORKSPACE}/my-portfolio")
+                }
             }
         }
-        stage("Deploy") {
+        stage('Deploy') {
             steps {
-                sh "sudo rm -rf /var/www/jenkins-my-portfolio"
-                sh "sudo cp -r ${WORKSPACE}/build/ /var/www/jenkins-my-portfolio/"
+                script{
+                        docker.withRegistry('', 'docker') {
+                        app.push("${env.BUILD_NUMBER}")
+                        app.push("latest")
+                    }
+                }
             }
+
         }
     }
 }
