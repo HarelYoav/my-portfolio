@@ -1,5 +1,5 @@
 # Fetching the latest node image on apline linux
-FROM node:alpine AS builder
+FROM --platform=linux/amd64 node:alpine AS builder
 
 # Setting up the work directory
 WORKDIR /app
