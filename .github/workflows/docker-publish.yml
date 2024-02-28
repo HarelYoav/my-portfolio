@@ -26,4 +26,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: yoavdocker89/my-portfolio:latest
+          tags: yoavdocker89/my-portfolio:{{github.run_number}}
