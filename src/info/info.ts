@@ -47,8 +47,8 @@ export const info = {
       label: 'linkedin'
     },
   ],
-  bio: `Hello, I'm Yoav Harel and I'm looking for a full-time position as a junior DevOps / Backend Developer. 
-        Currently I am working as a Developer Support at JFrog and hold a BSc in Computer Science. 
+  bio: `Hello, I'm Yoav Harel holding a Bachelor's degree in Computer Science. . 
+        Currently, I am working as a Developer Support at JFrog, and I'm looking for a full-time position as a junior DevOps / Backend Developer. 
         I am passionate about coding, problem-solving, and collaborating with others. 
         In my free time, I enjoy hiking, motorcycle riding, and relaxing on the beach.`,
   portfolio: [ 

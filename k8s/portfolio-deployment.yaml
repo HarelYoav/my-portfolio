@@ -27,7 +27,7 @@ spec:
               cpu: "250m"
             limits:
               memory: "128Mi"
-              cpu: "150m"
+              cpu: "500m"
       restartPolicy: Always
 ---
 apiVersion: v1
