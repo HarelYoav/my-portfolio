@@ -17,7 +17,11 @@ spec:
     spec:
       containers:
         - name: portfolio
+<<<<<<< HEAD
           image: yoavdocker89/my-portfolio:8
+=======
+          image: yoavdocker89/my-portfolio:7
+>>>>>>> refs/remotes/origin/main
           imagePullPolicy: Always
           ports:
           - containerPort: 80
