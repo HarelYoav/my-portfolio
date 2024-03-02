@@ -20,7 +20,6 @@ export interface IHome {
     
 }
 
-
 export interface IPortfolio {
     title: string;
     live: string;

@@ -52,7 +52,7 @@ const Navbar = ({ state, darkMode, handleClick } : IProps) => {
             gap={{xs: '1rem', md: '8rem'}} textTransform={'lowercase'} fontSize={'1rem'}>
           {links.map((link, index) => (
             <Box key={index} component={'li'} className={link.active === active  ? Style.active : ''}
-                sx={{borderImageSource: state?.gradient}}>
+                sx={{borderImageSource: state?.home?.gradient}}>
               <Box className={Style.headerLink}>
                 <Link to={link.to} onClick={() => setActive(link.active)}>
                   <Typography style={{paddingBottom: '0.5rem'}}>{link.name}</Typography>
