@@ -1,4 +1,4 @@
-apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+apiVersion: apps/v1 
 kind: Deployment
 metadata:
   name: portfolio
@@ -9,15 +9,15 @@ spec:
   selector:
     matchLabels:
       app: portfolio
-  replicas: 3 # tells deployment to run 2 pods matching the template
-  template: # create pods using pod definition in this template
+  replicas: 3 
+  template:
     metadata:
       labels:
         app: portfolio     
     spec:
       containers:
         - name: portfolio
-          image: yoavdocker89/my-portfolio:5
+          image: yoavdocker89/my-portfolio:8
           imagePullPolicy: Always
           ports:
           - containerPort: 80
