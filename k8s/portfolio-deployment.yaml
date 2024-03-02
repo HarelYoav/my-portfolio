@@ -7,7 +7,7 @@ data:
   info.json: |
     {
       "home": {
-        "firstName":"Yoav",
+        "firstName":"Yoav1",
         "lastName": "Harel",
         "initials": "yh", 
         "position": "a Developer Support Engineer",
