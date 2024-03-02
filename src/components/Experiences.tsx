@@ -2,6 +2,7 @@ import Timeline from '@mui/lab/Timeline';
 import ExperienceTimeLine from './ExperinceTimeLine'
 import {School, Work} from '@mui/icons-material';
 import {Box, Typography} from '@mui/material';
+import { Experience, icon } from '../interfaces';
 
 
 const icons = {
@@ -9,9 +10,11 @@ const icons = {
   school: <School/>
 }
 
-type icon = 'work' | 'school';
+interface IProps {
+  experiences: Experience[] | undefined
+}
 
-const Experience= ({state}: any) => {
+const Experiences = ({experiences}: IProps) => {
   return (
     <Box>
       <Box ml={5} mb={5}>
@@ -19,7 +22,7 @@ const Experience= ({state}: any) => {
         <Typography variant="h6" className="text">My Journey as a developer:</Typography>
       </Box>
       <Timeline position="alternate">
-        {state?.experiences.map((exp: {timeRange: string, role: string, location: string, icon: icon}, idx: number) =>  
+        {experiences?.map((exp: {timeRange: string, role: string, location: string, icon: icon}, idx: number) =>  
           <ExperienceTimeLine 
             key={idx}
             timeRange={exp.timeRange} 
@@ -33,4 +36,4 @@ const Experience= ({state}: any) => {
   );
 }
 
-export default Experience;
+export default Experiences;

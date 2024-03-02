@@ -1,4 +1,3 @@
-import {ReactElement} from 'react'
 import {
 	TimelineItem, 
 	TimelineSeparator, 
@@ -7,7 +6,6 @@ import {
 	TimelineOppositeContent, 
 	TimelineDot} from '@mui/lab';
 import { Typography } from '@mui/material';
-import { JsxElement } from 'typescript';
 
 interface IProps {
 	timeRange: string;

@@ -1,6 +1,4 @@
-import React from 'react';
 import {Box} from "@mui/material";
-
 
 interface IProps {
     darkMode: boolean;

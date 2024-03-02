@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: portfolio
-          image: yoavdocker89/my-portfolio:9
+          image: yoavdocker89/my-portfolio:11
           imagePullPolicy: Always
           ports:
           - containerPort: 80

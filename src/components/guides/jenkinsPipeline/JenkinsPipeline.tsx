@@ -1,4 +1,3 @@
-import React from 'react';
 import {blogImgs} from './blog-info';
 import {
   Box, 

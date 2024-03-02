@@ -1,6 +1,8 @@
-import { Box, Typography, createTheme, ThemeProvider } from '@mui/material';
 import Style from "./IAm.module.scss";
 import classNames from "classnames";
+import { Box, Typography, createTheme, ThemeProvider } from '@mui/material';
+
+
 const iconClass = "fa fa-circle";
 
 const theme = createTheme();
@@ -22,7 +24,11 @@ theme.typography.h6 = {
   },
 };
 
-const IAm = ({state}: any) => {
+interface IPorps {
+  bio: string | undefined;
+}
+
+const Bio = ({bio}: IPorps) => {
   return (
     
     <Box component={'main'} display={'flex'} flexDirection={{xs: 'column', md: 'row'}} alignItems={'center'}
@@ -39,7 +45,7 @@ const IAm = ({state}: any) => {
           <Box py={{xs: '1rem', md: '2rem'}} px={{xs: '2rem', md: '3rem'}} borderRadius={'0 0 0.5rem 0.5rem'}
                 sx={{backgroundColor: '#27242f'}} fontSize={'1.5rem'} fontFamily={'Courier New, Courier, monospace'}>
               <ThemeProvider theme={theme}>
-                <Typography variant='h6' my={1}>{state?.bio}</Typography>
+                <Typography variant='h6' my={1}>{bio}</Typography>
               </ThemeProvider>
           </Box>
       </Box>
@@ -47,4 +53,4 @@ const IAm = ({state}: any) => {
   )
 }
 
-export default IAm;
+export default Bio;

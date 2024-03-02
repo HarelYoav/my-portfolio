@@ -1,21 +1,12 @@
-import React from 'react';
 import IconLink from './IconLink';
 import { Box, Typography } from '@mui/material';
 import classNames from "classnames";
 import Style from "./IAm.module.scss";
-
+import { IPortfolio } from '../interfaces';
 const iconClass = "fa fa-circle";
 
 
-interface IProps {
-    image: string;
-    live: string | undefined;
-    source: string;
-    title: string;
-    tech: string;
-}
-
-function PortfolioBlock({ image, live, source, title, tech }: IProps) {
+function PortfolioBlock({ image, live, source, title, tech }: IPortfolio) {
   return (
      <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
         <Typography variant='h5'>{title}</Typography>
@@ -40,9 +31,7 @@ function PortfolioBlock({ image, live, source, title, tech }: IProps) {
         </Box>
       </Box>
      </Box>
-     
   );
 }
-
 
 export default PortfolioBlock;

@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
 import Style from './Navbar.module.scss';
 import Toggler from './Toggler';
+import {useState} from 'react';
 import {Link, useLocation} from "react-router-dom";
 import { Box, Typography } from "@mui/material";
 

@@ -1,12 +1,11 @@
-import React from "react";
+import { Skill } from "../interfaces";
 import {Grid, Box, Typography} from '@mui/material';
 
-type Skill = {
-  name: string;
-  img: any;
+interface IPorps {
+  skills: Skill[] | undefined
 }
 
-const Skills = ({state}: any) => {
+const Skills = ({skills}: IPorps) => {
   return(
     <Box>
       <Box ml={5} mb={5}>
@@ -15,7 +14,7 @@ const Skills = ({state}: any) => {
       </Box>
       <Box>
         <Grid container className="skill-icons-gird" display={'flex'} alignItems={'center'} justifyContent={'center'}>
-          {state?.skills.map((skill: Skill, idx: number) => {
+          {skills?.map((skill: Skill, idx: number) => {
             return(
               <Grid key={idx} item xs={4} md={2} textAlign='center'>
                   <Box className="skill">

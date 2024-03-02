@@ -1,18 +1,22 @@
-import React from 'react';
 import Skills from '../../components/Skills';
-import IAm from '../../components/IAm';
+import Bio from '../../components/Bio';
+import Experiences from '../../components/Experiences';
 import {Box} from '@mui/material';
-import Experience from '../../components/Experience';
+import { IAboutMe } from '../../interfaces';
 
-const AboutMe = ({state}: any) => {
+interface IProps {
+  aboutMe: IAboutMe | undefined;
+}
+
+const AboutMe = ({aboutMe}: IProps) => {
   return (
     <Box>
-        <IAm state={state}/>
+        <Bio bio={aboutMe?.bio}/>
         <Box component={'main'} display={'flex'} flexDirection={{xs: 'column', md: 'row'}} 
           justifyContent={'space-evenly'} minHeight={'50vh'}
         >
-          <Experience state={state}/>
-          <Skills state={state}/>
+          <Experiences experiences={aboutMe?.experiences}/>
+          <Skills skills={aboutMe?.skills}/>
         </Box>
     </Box>
   )
