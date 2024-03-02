@@ -7,10 +7,10 @@ data:
   info.json: |
     {
       "home": {
-        "firstName":"Yoav1",
+        "firstName":"Yoav",
         "lastName": "Harel",
         "initials": "yh", 
-        "position": "a Developer Support Engineer",
+        "position": "a junior DevOps / Backend Developer",
         "selfPortrait": "./images/self.png", 
         "gradient": "-webkit-linear-gradient(135deg, rgb(0,255,164), rgb(166,104,255))",
         "baseColor": "rgb(0,255,164)",
@@ -169,7 +169,7 @@ spec:
     spec:
       containers:
         - name: portfolio
-          image: yoavdocker89/my-portfolio:11
+          image: yoavdocker89/my-portfolio:12
           imagePullPolicy: Always
           ports:
           - containerPort: 80
