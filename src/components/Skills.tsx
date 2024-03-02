@@ -1,9 +1,12 @@
 import React from "react";
-import { skills, Skill } from './config';
 import {Grid, Box, Typography} from '@mui/material';
 
+type Skill = {
+  name: string;
+  img: any;
+}
 
-const Skills = () => {
+const Skills = ({state}: any) => {
   return(
     <Box>
       <Box ml={5} mb={5}>
@@ -12,7 +15,7 @@ const Skills = () => {
       </Box>
       <Box>
         <Grid container className="skill-icons-gird" display={'flex'} alignItems={'center'} justifyContent={'center'}>
-          {skills.map((skill: Skill, idx: number) => {
+          {state?.skills.map((skill: Skill, idx: number) => {
             return(
               <Grid key={idx} item xs={4} md={2} textAlign='center'>
                   <Box className="skill">

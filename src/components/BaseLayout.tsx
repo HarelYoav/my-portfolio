@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Style from './BaseLayout.module.scss'
 import Navbar from "./Navbar";
 import Home from "../screens/home/Home";
@@ -17,18 +17,32 @@ const BaseLayout = () => {
     setDarkMode(!darkMode);
   }
 
+  const [state, setState] = useState<any>();
+
+  useEffect(()=>{
+      fetch('./config/info.json').then(response => {
+          response.json().then(json => {
+              // instead of setting state you can use it any other way
+              setState(json);
+              
+          })
+      })
+  }, [])
+
+  console.log(state?.firstName)
+
   return (
     <Box className={darkMode ? Style.dark : Style.light}>
       <Grid container display={'flex'} flexDirection={'column'} minHeight={'100vh'}
             justifyContent={'space-between'}>
         <Grid item style={{position: 'sticky', top: 0, zIndex: 1}} className={darkMode ? Style.dark : Style.light}>
-          <Navbar darkMode={darkMode} handleClick={handleClick}/>
+          <Navbar state={state} darkMode={darkMode} handleClick={handleClick}/>
         </Grid>
         <Grid item xs={12}>
           <Routes>
-            <Route path={'/'} element={<Home/>}/>
-            <Route path={'about'} element={<AboutMe/>}/>
-            <Route path={'portfolio'} element={<Portfolio/>}/>
+            <Route path={'/'} element={<Home state={state}/>}/>
+            <Route path={'about'} element={<AboutMe state={state}/>}/>
+            <Route path={'portfolio'} element={<Portfolio state={state}/>}/>
             <Route path={'my-blog'} >
                <Route index={true} element={<Blogs/>}/>
                <Route index={false} path={'jenkins-pipeline'} element={<JenkinsPipeline/>}/>

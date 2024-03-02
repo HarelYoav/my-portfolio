@@ -3,7 +3,6 @@ import Style from './Navbar.module.scss';
 import Toggler from './Toggler';
 import {Link, useLocation} from "react-router-dom";
 import { Box, Typography } from "@mui/material";
-import {info} from '../info/info';
 
 const links = [
     {
@@ -36,12 +35,13 @@ const links = [
 ]
 
 interface IProps {
+    state: any;
     darkMode: boolean;
     handleClick: () => void;
    
 }
 
-const Navbar = ({ darkMode, handleClick } : IProps) => {
+const Navbar = ({ state, darkMode, handleClick } : IProps) => {
 
     const location = useLocation()
     const [active, setActive] = useState(location.pathname.slice(1, location.pathname.length));
@@ -52,7 +52,7 @@ const Navbar = ({ darkMode, handleClick } : IProps) => {
             gap={{xs: '1rem', md: '8rem'}} textTransform={'lowercase'} fontSize={'1rem'}>
           {links.map((link, index) => (
             <Box key={index} component={'li'} className={link.active === active  ? Style.active : ''}
-                sx={{borderImageSource: info.gradient}}>
+                sx={{borderImageSource: state?.gradient}}>
               <Box className={Style.headerLink}>
                 <Link to={link.to} onClick={() => setActive(link.active)}>
                   <Typography style={{paddingBottom: '0.5rem'}}>{link.name}</Typography>
