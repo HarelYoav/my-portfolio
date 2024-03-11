@@ -34,6 +34,9 @@ const JenkinsPipeline = () => {
     <ThemeProvider theme={theme}>
       <Box dir={'rtl'} maxWidth='md' display={'flex'} flexDirection={'column'} mx={'auto'} px={2} pb={5}>
         <Box py={2} my={2}>
+          <Typography variant='h6' textAlign={'center'} mb={1}>
+            פורסם בתאריך: 30.8.2022
+          </Typography>
           <Typography variant='h4' textAlign={'center'}>
             הגדרת CD/CI Pipeline להעלאה אוטומטית של אפליקציית React לשרת AWS ec2.
           </Typography>

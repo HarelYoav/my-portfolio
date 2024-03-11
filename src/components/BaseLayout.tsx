@@ -12,7 +12,7 @@ import { IState } from '../interfaces';
 
 const BaseLayout = () => {
   const [state, setState] = useState<IState>();
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   function handleClick() {
     setDarkMode(!darkMode);

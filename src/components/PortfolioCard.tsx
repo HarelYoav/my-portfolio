@@ -26,7 +26,7 @@ function PortfolioBlock({ image, live, source, title, tech }: IPortfolio) {
         </Box>
         <Box className={'portfolio'} display={'flex'} flexDirection={'row'} gap={'0.5rem'}
           alignItems={'center'} justifyContent={'space-around'} fontSize={'1.5rem'} fontWeight={400} pb={'2rem'} py={'1rem'}>
-            <IconLink link={live} title={'Live'} icon={'fa fa-chrome'} blank={false}/>
+            {live &&  <IconLink link={live} title={'Live'} icon={'fa fa-chrome'} blank={false}/>}
             <IconLink link={source} title={'GitHub'} icon={'fa fa-github'} blank={true}/>
         </Box>
       </Box>
