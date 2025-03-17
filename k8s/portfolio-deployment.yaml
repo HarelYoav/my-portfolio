@@ -169,7 +169,7 @@ spec:
     spec:
       containers:
         - name: portfolio
-          image: yoavdocker89/my-portfolio:16
+          image: yoavdocker89/my-portfolio:latest
           imagePullPolicy: Always
           ports:
           - containerPort: 80
