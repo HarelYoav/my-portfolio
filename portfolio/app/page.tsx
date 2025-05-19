@@ -64,7 +64,7 @@ const LandingComponent = async () => {
             <Link
               key={item.href}
               href={item.href}
-              className="text-lg text-zinc-500 duration-500 hover:text-zinc-300"
+              className="text-lg text-zinc-700 duration-500 hover:text-zinc-500 dark:text-zinc-500 dark:hover:text-zinc-300"
             >
               <span className="inline-flex items-center">
                 {item.name} <LoadingIndicator />
@@ -76,7 +76,7 @@ const LandingComponent = async () => {
       </nav>
       <div className="animate-glow animate-fade-left hidden h-px w-screen bg-linear-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 md:block" />
 
-      <h1 className="text-edge-outline animate-title font-display z-10 flex cursor-default items-center bg-white bg-clip-text p-5 text-4xl whitespace-nowrap text-transparent duration-1000 hover:scale-110 sm:text-6xl md:text-9xl">
+      <h1 className="text-edge-outline animate-title font-display z-10 flex cursor-default items-center bg-zinc-950 bg-clip-text p-5 text-4xl whitespace-nowrap text-transparent duration-1000 hover:scale-110 sm:text-6xl md:text-9xl dark:bg-white">
         {username}
         <Suspense fallback={<p>Loading...</p>}>
           <UserIcon promise={promise} />

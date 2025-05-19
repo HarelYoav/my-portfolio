@@ -53,13 +53,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       className={[inter.variable, calSans.variable].join(" ")}
       suppressHydrationWarning
     >
-      {/* <body
-        className={`bg-black ${
-          process.env.NODE_ENV === "development" ? "debug-screens" : ""
-        }`}
-      > */}
       <body
-        className={` ${
+        className={`bg-zinc-100 dark:bg-black ${
           process.env.NODE_ENV === "development" ? "debug-screens" : ""
         }`}
       >

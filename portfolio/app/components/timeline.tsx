@@ -30,28 +30,34 @@ export function TimelineItem({
   ...props
 }: TimelineItemProps) {
   return (
-    <div className={cn("relative pb-8 pl-10 last:pb-0", className)} {...props}>
+    <div
+      className={cn("relative h-28 pb-8 pl-10 last:pb-0 hover:mb-5", className)}
+      {...props}
+    >
       {/* Vertical line - stops at the center of each icon */}
       {/* This creates the line ABOVE the icon */}
-      <div className="absolute top-0 left-[15px] h-4 w-[2px] -translate-x-1/2 transform bg-slate-200" />
-
-      {/* This creates the line BELOW the icon */}
-      <div className="absolute top-12 bottom-0 left-[15px] w-[2px] -translate-x-1/2 transform bg-slate-200" />
+      <div className="absolute top-0 left-[15px] h-8 w-[2px] -translate-x-1/2 transform bg-slate-200" />
 
       {/* Icon */}
-      <div className="absolute top-4 left-[15px] flex h-8 w-8 -translate-x-1/2 items-center justify-center rounded-full border-2">
+      <div className="absolute top-10 left-[15px] flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full border-2">
         {icon || <div className="bg-primary h-2 w-2 rounded-full" />}
       </div>
 
+      {/* This creates the line BELOW the icon */}
+      <div className="hover:top-bottom-0 absolute top-22 left-[15px] h-8 w-[2px] -translate-x-1/2 transform bg-slate-200" />
+
       {/* Content */}
-      <div className="w-full space-y-1 pt-1">
-        <div className="flex items-center justify-between">
-          <h3 className="leading-none font-medium">{title}</h3>
-          {date && <div className="text-muted-foreground text-xs">{date}</div>}
+      <div className="ml-5 w-full space-y-1 pt-9">
+        <div className="flex flex-col justify-between">
+          <h3 className="leading-none font-medium">
+            {title} - {description && description}
+          </h3>
+          {date && (
+            <div className="text-muted-foreground text-xs dark:text-zinc-400">
+              {date}
+            </div>
+          )}
         </div>
-        {description && (
-          <p className="text-muted-foreground text-sm">{description}</p>
-        )}
       </div>
     </div>
   );

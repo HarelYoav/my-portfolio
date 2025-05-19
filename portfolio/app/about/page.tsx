@@ -16,8 +16,8 @@ type Experience = {
 };
 
 const icons: Record<IconType, JSX.Element> = {
-  work: <BriefcaseBusiness />,
-  school: <GraduationCap />,
+  work: <BriefcaseBusiness size={32} />,
+  school: <GraduationCap size={32} />,
 };
 
 export default async function About() {
@@ -33,15 +33,16 @@ export default async function About() {
           fallback={<div className="text-lg text-zinc-500">Loading...</div>}
         ></Suspense>
       </div>
-      <div className="mx-auto flex max-w-7xl flex-col justify-evenly space-y-8 px-6 pt-16 md:flex-row md:space-y-12 md:pt-24 lg:px-8 lg:pt-32">
+      <div className="mx-auto flex max-w-7xl flex-col justify-evenly space-y-8 px-6 pt-16 md:flex-row md:space-y-12 md:pt-16 lg:px-8">
         <div>
           <h2>Experience</h2>
-          <Timeline>
+          <Timeline className="mt-5">
             {experiences.map((e: Experience) => (
               <TimelineItem
                 key={e.role}
                 title={e.role}
                 date={e.timeRange}
+                description={e.location}
                 icon={icons[e.icon]}
               />
             ))}
