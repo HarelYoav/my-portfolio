@@ -1,12 +1,27 @@
-import { Suspense } from "react";
+import { JSX, Suspense } from "react";
 
-import { Calendar, Clock, Rocket, Star, Zap } from "lucide-react";
+import { BriefcaseBusiness, GraduationCap } from "lucide-react";
 
 import data from "../../data.json";
 import { Navigation } from "../components/nav";
 import { Timeline, TimelineItem } from "../components/timeline";
 
+type IconType = "work" | "school";
+
+type Experience = {
+  timeRange: string;
+  role: string;
+  location: string;
+  icon: IconType;
+};
+
+const icons: Record<IconType, JSX.Element> = {
+  work: <BriefcaseBusiness />,
+  school: <GraduationCap />,
+};
+
 export default async function About() {
+  const experiences: Experience[] = data.experiences as Experience[];
   return (
     <div className="relative pb-16">
       <Navigation />
@@ -22,40 +37,14 @@ export default async function About() {
         <div>
           <h2>Experience</h2>
           <Timeline>
-            <TimelineItem
-              title="Project Started"
-              description="Initial project planning and team assembly completed."
-              date="January 15, 2023"
-              icon={<Calendar className="text-primary h-4 w-4" />}
-            />
-
-            <TimelineItem
-              title="Design Phase"
-              description="UI/UX design mockups and prototypes finalized."
-              date="February 28, 2023"
-              icon={<Star className="text-primary h-4 w-4" />}
-            />
-
-            <TimelineItem
-              title="Development Kickoff"
-              description="Core development team began implementation of key features."
-              date="March 10, 2023"
-              icon={<Zap className="text-primary h-4 w-4" />}
-            />
-
-            <TimelineItem
-              title="Alpha Release"
-              description="Internal testing phase initiated with basic functionality."
-              date="May 22, 2023"
-              icon={<Rocket className="text-primary h-4 w-4" />}
-            />
-
-            <TimelineItem
-              title="Beta Launch"
-              description="Limited public release for feedback and bug reporting."
-              date="July 15, 2023"
-              icon={<Clock className="text-primary h-4 w-4" />}
-            />
+            {experiences.map((e: Experience) => (
+              <TimelineItem
+                key={e.role}
+                title={e.role}
+                date={e.timeRange}
+                icon={icons[e.icon]}
+              />
+            ))}
           </Timeline>
         </div>
         <h2>Skillset</h2>

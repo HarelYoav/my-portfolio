@@ -8,5 +8,31 @@
   "projects": {
     "blacklist": [],
     "heroNames": []
-  }
+  },
+  "experiences": [
+    {
+      "timeRange": "January, 2025 - Present",
+      "role": "Senior Developer Support Engineer",
+      "location": "JFrog",
+      "icon": "work"
+    },
+    {
+      "timeRange": "June, 2023 - December 2024",
+      "role": "Developer Support Engineer",
+      "location": "JFrog",
+      "icon": "work"
+    },
+    {
+      "timeRange": "April, 2022 - May, 2023",
+      "role": "Enterprise Support Tier 1",
+      "location": "IBM",
+      "icon": "work"
+    },
+    {
+      "timeRange": "2020 - 2023",
+      "role": "Computer Sience Studnet",
+      "location": "Ruppin Academic Center",
+      "icon": "school"
+    }
+  ]
 }
